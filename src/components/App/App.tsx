@@ -11,13 +11,13 @@ import MovieModal from '../MovieModal/MovieModal';
 
 
 export default function App() {
-const [query, setQuery] = useState('');
+const [, setQuery] = useState('');
 const [movies, setMovies] = useState<Movie[]>([]);
 const [loading, setLoading] = useState(false);
 const [selectMovie, setSelectMovie] = useState <Movie | null>(null);
 const [isError, setIsError] = useState<boolean>(false);
 
-const openModal = (movie: Movie) => setSelectMovie(movie);
+const openModal = async (movie: Movie) => setSelectMovie(movie);
 const closeModal = () => setSelectMovie(null);
 
 
@@ -45,7 +45,8 @@ setQuery(searchQuery);
 
 return (
 
-<div>
+<div className={css.appContainer}>
+
 <SearchBar onSubmit={searchSubmit}/>
 <Toaster position='top-center'/>
 {loading && <Loader />}
