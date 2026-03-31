@@ -11,6 +11,7 @@ import MovieModal from '../MovieModal/MovieModal';
 
 
 export default function App() {
+const [query, setQuery] = useState('');
 const [movies, setMovies] = useState<Movie[]>([]);
 const [loading, setLoading] = useState(false);
 const [selectMovie, setSelectMovie] = useState <Movie | null>(null);
